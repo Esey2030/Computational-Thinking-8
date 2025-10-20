@@ -57,13 +57,18 @@ set_background("fall")
 draw_rectangle("blue", 100, 100, 200, 200)
 draw_rectangle("red", -100, 100, 200, 200)
 draw_rectangle("black", 100, -100, 200, 200)
+draw_rectangle("green", -100, -100, 200, 200)
 
 s1 = create_sprite("cardinal", 100, 100)
 s2 = create_sprite("cardinal", -100, -100)
+s3 = create_sprite("AE2", -100, 100)
+s4 = create_sprite("67", 100, -100)
 
 message1 = create_sprite("alien",-200,200)
 message1.color("red")
 message1.write("Esey",font = ("Arial", 40, "normal"))
+message2 = create_sprite("alien",50,50)
+message2.write("I like soccer",font = ("Arial", 40, "normal"))
 message1.hideturtle()
 
 
@@ -73,3 +78,9 @@ message1.hideturtle()
 # Section 3 - Keeping the window open (DON'T CHANGE!!)
 window.update()
 turtle.exitonclick()
+
+
+
+#67
+#boi
+#Is ts tuff
