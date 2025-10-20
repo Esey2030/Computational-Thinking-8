@@ -43,7 +43,7 @@ if soccer_points > basketball_points:
 elif soccer_points < basketball_points:
 	print("youre a basketball player")
 
-if answer == "b"and basketball_points:
+if answer == "b"and basketball_points > soccer_points:
 	print("you really like basketball")
 
 if answer == "a" or answer == "b":
