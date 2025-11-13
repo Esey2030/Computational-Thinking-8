@@ -48,42 +48,65 @@ window = turtle.Screen()
 window.tracer(0)
 
 
+# Section 2: Setup
+s1 = create_sprite("bluecircle",100,100)
+s2 = create_sprite("personimage",-100,-100)
+set_background("white")
+# TODO - set the starting value for your variable
 
-######################################################################
-# https://en.wikipedia.org/wiki/Web_colors#Extended_colors
-# Section 2 - Your code
-set_background("fall")
-#sets the background to make it look like fall
+# Section 3: Controls
+def move_up():
+    s1.setheading(90)
+    s1.forward(10)
+def move_up2():
+    s2.setheading(90)
+    s2.forward(10)
+        
+def move_down():
+    s1.setheading(270)
+    s1.forward(10)
+def move_down2():
+    s2.setheading(270)
+    s2.forward(10)
+    
+def move_left():
+    s1.setheading(180)
+    s1.forward(10)
+def move_left2():
+    s2.setheading(180)
+    s2.forward(10)
+    
+def move_right():    
+    s1.setheading(0)
+    s1.forward(10)
+def move_right2():    
+    s2.setheading(0)
+    s2.forward(10)
 
-draw_rectangle("blue", 100, 100, 200, 200)
-#draws rectagle blue
-draw_rectangle("red", -100, 100, 200, 200)
-draw_rectangle("black", 100, -100, 200, 200)
-draw_rectangle("green", -100, -100, 200, 200)
-
-s1 = create_sprite("cardinal", 100, 100)
-#creats sprite
-s2 = create_sprite("cardinal", -100, -100)
-s3 = create_sprite("AE2", -100, 100)
-s4 = create_sprite("67", 100, -100)
-
-message1 = create_sprite("alien",-200,200)
-message1.color("red")
-message1.write("Esey",font = ("Arial", 40, "normal"))
-message2 = create_sprite("alien",50,50)
-message2.write("I like soccer",font = ("Arial", 40, "normal"))
-message1.hideturtle()
+window.onkeypress(move_up, "w")
+window.onkeypress(move_up2, "Up")
+window.onkeypress(move_down, "s")
+window.onkeypress(move_down2, "Down")
+window.onkeypress(move_left, "a")
+window.onkeypress(move_left2, "Left")
+window.onkeypress(move_right, "d")
+window.onkeypress(move_right2, "Right")
 
 
-######################################################################
+# Section 4: Game Loop
+window.listen()
+timer = 0
+while True:
+	time.sleep(1)
+	timer += 1  
+	 
+    
+ 	# TODO - code for automatic actions
+
+	window.update()
+      
 
 
-# Section 3 - Keeping the window open (DON'T CHANGE!!)
-window.update()
-turtle.exitonclick()
-
-
-
-#67
-#boi
-#Is ts tuff
+	if get_distance(s1, s2) < 35:
+		break
+print(f"Game Over it took the circle {timer} seconds to catch the person")
