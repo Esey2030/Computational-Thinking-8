@@ -97,7 +97,7 @@ window.onkeypress(move_right2, "Right")
 window.listen()
 timer = 0
 while True:
-	time.sleep(1)
+	time.sleep(0.01)
 	timer += 1  
 	 
     
@@ -110,3 +110,5 @@ while True:
 	if get_distance(s1, s2) < 35:
 		break
 print(f"Game Over it took the circle {timer} seconds to catch the person")
+
+
